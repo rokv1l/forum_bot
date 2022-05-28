@@ -28,10 +28,10 @@ def events_data_callback(update, context):
     sheet.cell(row=1, column=4).value = 'Дата и время начала'
     sheet.cell(row=1, column=5).value = 'Подписавшиеся пользователи'
     for i, event in enumerate(events):
-        sheet.cell(row=i + 1, column=1).value = event['category']
-        sheet.cell(row=i + 1, column=2).value = event['name']
-        sheet.cell(row=i + 1, column=3).value = event['desc']
-        sheet.cell(row=i + 1, column=4).value = event['dt'].isoformat().replace('T', ' ')
+        sheet.cell(row=i + 2, column=1).value = event['category']
+        sheet.cell(row=i + 2, column=2).value = event['name']
+        sheet.cell(row=i + 2, column=3).value = event['desc']
+        sheet.cell(row=i + 2, column=4).value = event['dt'].isoformat().replace('T', ' ')
         
         users = [users_col.find_one({'tg_id': user}) for user in event['users']]
         sheet.cell(row=i + 1, column=5).value = ' '.join([user['full_name'] for user in users])
