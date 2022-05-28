@@ -53,7 +53,7 @@ def mailing(update, context):
                 )
             except Exception:
                 update.effective_chat.send_message(
-                    f'Пользователь ({user["tg_id"]}, {user["username"] + "," if user["username"] else ""}) '\
+                    f'Пользователь ({user["full_name"]}, {user["username"] + "," if user["username"] else ""}) '\
                     f'по какой-то причине не смог получить сообщение'
                 )
         update.effective_chat.send_message('✅Рассылка проведена✅')
