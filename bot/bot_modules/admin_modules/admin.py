@@ -61,6 +61,14 @@ def unknown(update, context):
     )
 
 
+def _exit(update, context):
+    if 'msg_for_del_keys' in context.user_data:
+        delete_keyboard(context, update.effective_chat.id)
+
+    update.effective_chat.send_message('Вы вышли из всех диалогов, для использования бота нажмите /start')
+    return ConversationHandler.END
+
+
 admin_handler = ConversationHandler(
     entry_points=[
         CommandHandler('admin', admin_menu)
@@ -74,6 +82,7 @@ admin_handler = ConversationHandler(
         ],
     },
     fallbacks=[
+        CommandHandler('exit', _exit),
         MessageHandler(Filters.all, unknown)
     ]
 )
