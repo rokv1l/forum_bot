@@ -17,6 +17,7 @@ def start(update, context):
             [InlineKeyboardButton('Материалы', callback_data='Материалы')],
             [InlineKeyboardButton('Расписание дня', callback_data='Расписание дня')],
             [InlineKeyboardButton('Внеобразовательная программа', callback_data='Внеобразовательная программа')],
+            [InlineKeyboardButton('Баланс Ай-валюты', url='https://docs.google.com/spreadsheets/d/16a9D8JQNe9_5RFdLqqczCSGtfMohZ8jbDZanEVLfUh8/edit?usp=sharing')],
             [InlineKeyboardButton('Тех. поддержка', callback_data='Тех. поддержка')],
             [InlineKeyboardButton('Выход', callback_data='Выход')],
         ])
