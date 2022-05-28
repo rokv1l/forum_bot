@@ -52,7 +52,7 @@ def auth_code(update, context):
             [InlineKeyboardButton('Выход', callback_data='Выход')],
         ])
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
-            f'Привет {user["full_name"]}, вы успешно авторизованны',
+            f'{user["full_name"]}, здравствуйте. Вы успешно авторизованны',
             reply_markup=keyboard
         )
         
