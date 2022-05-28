@@ -67,6 +67,7 @@ def delete_keyboard(context, chat_id):
     del context.user_data['msg_for_del_keys']
 
 
+@admin_access_control
 def admin_menu(update, context):
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton('Рассылка всем пользователям', callback_data='mailing')],

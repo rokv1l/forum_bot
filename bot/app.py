@@ -11,6 +11,10 @@ from bot_modules.user_modules.main_user_menu import main_handler
 from bot_modules.admin_modules.admin import admin_handler
 
 
+def admin_auth(update, context):
+    pass
+
+
 def unknown(update, context):
     update.effective_chat.send_message('Вы ввели неизвестную командую')
 
