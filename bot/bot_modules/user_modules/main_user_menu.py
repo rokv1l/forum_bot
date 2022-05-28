@@ -98,7 +98,7 @@ def main_menu_callback(update, context):
             [InlineKeyboardButton('Карта форума', callback_data='Карта форума')],
             [InlineKeyboardButton('Программа форума', callback_data='Программа форума')],
             [InlineKeyboardButton('Правила форума', callback_data='Правила форума')],
-            [InlineKeyboardButton('Материалы от спикеров', url='https://www.google.ru/')],
+            [InlineKeyboardButton('Материалы от спикеров', url='https://drive.google.com/drive/folders/1S64IqkNo4Xj1SOnE2Oe6d8jqMWskXArg?usp=sharing')],
             [InlineKeyboardButton('Назад', callback_data='Назад')],
         ])
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
@@ -171,17 +171,17 @@ def materials_callback(update, context):
     
     if data == 'Карта форума':
         update.effective_chat.send_message('Вы нажали кнопку "Карта форума"')
-        with open('/bot/files/forum_map.txt', 'rb') as file:
+        with open('/bot/files/Карта Форума.jpeg', 'rb') as file:
             update.effective_chat.send_document(file, filename=file.name)
         
     elif data == 'Программа форума':
         update.effective_chat.send_message('Вы нажали кнопку "Программа форума"')
-        with open('/bot/files/forum_program.txt', 'rb') as file:
+        with open('/bot/files/ПРОГРАММА АТР 2022.pdf', 'rb') as file:
             update.effective_chat.send_document(file, filename=file.name)
         
     elif data == 'Правила форума':
         update.effective_chat.send_message('Вы нажали кнопку "Правила форума"')
-        with open('/bot/files/forum_rules.txt', 'rb') as file:
+        with open('/bot/files/Правила участия АТР-2022.pdf', 'rb') as file:
             update.effective_chat.send_document(file, filename=file.name)
     
     # elif data == 'Материалы от спикеров':
