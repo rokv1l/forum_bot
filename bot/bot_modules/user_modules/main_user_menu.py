@@ -153,7 +153,7 @@ def main_menu_callback(update, context):
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
             'Сформулируйте и напишите ваш вопрос в чат тех поддержки *здесь нужно вставить ссылку на чат тех поддержки*',
             reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('Перейти в чат тех. поддержки', url='https://www.google.ru/')],
+                [InlineKeyboardButton('Задать вопрос', url='https://forms.gle/injsy71mAQo5AFrz8')],
                 [InlineKeyboardButton('Назад', callback_data='Назад')]
             ])
         )
