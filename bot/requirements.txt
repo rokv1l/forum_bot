@@ -1,7 +1,6 @@
 python-telegram-bot
 loguru
 pymongo
-fuzzywuzzy
-python-Levenshtein
 matplotlib
 numpy
+openpyxl
