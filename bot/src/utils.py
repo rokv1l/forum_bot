@@ -72,6 +72,7 @@ def admin_menu(update, context):
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton('Рассылка всем пользователям', callback_data='mailing')],
         [InlineKeyboardButton('Создать событие', callback_data='create_event')],
+        [InlineKeyboardButton('Выгрузка данных всех событий', callback_data='events_data')],
         [InlineKeyboardButton('Выход', callback_data='Выход')],
         # [InlineKeyboardButton('Ответить на вопросы *Тех. поддержка*', callback_data='qna_support')],
     ])
