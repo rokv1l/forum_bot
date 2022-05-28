@@ -48,6 +48,7 @@ def auth_code(update, context):
             [InlineKeyboardButton('Материалы', callback_data='Материалы')],
             [InlineKeyboardButton('Расписание дня', callback_data='Расписание дня')],
             [InlineKeyboardButton('Внеобразовательная программа', callback_data='Внеобразовательная программа')],
+            [InlineKeyboardButton('Баланс Ай-валюты', url='https://docs.google.com/spreadsheets/d/16a9D8JQNe9_5RFdLqqczCSGtfMohZ8jbDZanEVLfUh8/edit?usp=sharing')],
             [InlineKeyboardButton('Тех. поддержка', callback_data='Тех. поддержка')],
             [InlineKeyboardButton('Выход', callback_data='Выход')],
         ])
@@ -98,6 +99,7 @@ def main_menu_callback(update, context):
             [InlineKeyboardButton('Карта форума', callback_data='Карта форума')],
             [InlineKeyboardButton('Программа форума', callback_data='Программа форума')],
             [InlineKeyboardButton('Правила форума', callback_data='Правила форума')],
+            [InlineKeyboardButton('Туристическая справка', url='https://drive.google.com/drive/folders/1SGzqbmkb_iHK-opzs1rbYDssrEOStgGr?usp=sharing')],
             [InlineKeyboardButton('Материалы от спикеров', url='https://drive.google.com/drive/folders/1S64IqkNo4Xj1SOnE2Oe6d8jqMWskXArg?usp=sharing')],
             [InlineKeyboardButton('Назад', callback_data='Назад')],
         ])
