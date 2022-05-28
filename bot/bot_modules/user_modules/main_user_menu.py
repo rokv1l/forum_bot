@@ -66,10 +66,10 @@ def auth_code(update, context):
                 'code': '',
                 'platform': ''
             })
-            update.effective_chat.send_message('Вы авторизованны и наделены правами администратора, для входа в меню администратора воспользуйтесь /admin')
+            update.effective_chat.send_message('Вы авторизованны и наделены правами администратора, для входа в меню администратора воспользуйтесь /admin\nДля просмотра функционала пользователя воспользуйтесь /start')
         elif not not user['admin']:
             users_col.update_one({'tg_id': update.effective_chat.id}, {'$set': {'admin': True}})
-            update.effective_chat.send_message('Вы наделены правами администратора, для входа в меню администратора воспользуйтесь /admin')
+            update.effective_chat.send_message('Вы наделены правами администратора, для входа в меню администратора воспользуйтесь /admin\nДля просмотра функционала пользователя воспользуйтесь /start')
 
     else:
         update.effective_chat.send_message('Вы ввели недействительный код, проверьте правильность написания и попробуйте еще раз')
