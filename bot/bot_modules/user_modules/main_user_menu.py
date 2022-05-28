@@ -1,4 +1,5 @@
-from datetime import date, datetime, time
+import re
+from datetime import date, datetime
 
 from loguru import logger
 from telegram.ext import ConversationHandler, MessageHandler, Filters, CallbackQueryHandler, CommandHandler
@@ -30,7 +31,7 @@ def start(update, context):
 
 
 def auth_code(update, context):
-    code = update.message.text.replace(' ', '( ?)')
+    code = re.compile(update.message.text.replace(' ', '( ?)'), re.IGNORECASE)
     user = users_col.find_one({'code': code})
     if user:
         context.user_data['autorized'] = True
