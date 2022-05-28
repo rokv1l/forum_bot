@@ -77,7 +77,8 @@ admin_handler = ConversationHandler(
         config.ADMIN_MAIN_MENU: [
             mailing_handler,
             create_event_handler,
-            CallbackQueryHandler(back_callback, pattern=r'Выход')
+            CallbackQueryHandler(back_callback, pattern=r'Выход'),
+            CallbackQueryHandler(events_data_callback, pattern=r'events_data')
             # support_admin_handler
         ],
     },
