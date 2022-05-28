@@ -97,7 +97,7 @@ def main_menu_callback(update, context):
             [InlineKeyboardButton('Карта форума', callback_data='Карта форума')],
             [InlineKeyboardButton('Программа форума', callback_data='Программа форума')],
             [InlineKeyboardButton('Правила форума', callback_data='Правила форума')],
-            [InlineKeyboardButton('Материалы от спикеров', callback_data='Материалы от спикеров')],
+            [InlineKeyboardButton('Материалы от спикеров', url='https://www.google.ru/')],
             [InlineKeyboardButton('Назад', callback_data='Назад')],
         ])
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
@@ -180,9 +180,9 @@ def materials_callback(update, context):
         with open('/bot/files/forum_rules.txt', 'rb') as file:
             update.effective_chat.send_document(file, filename=file.name)
     
-    elif data == 'Материалы от спикеров':
-        update.effective_chat.send_message('Вы нажали кнопку "Материалы от спикеров"')
-        update.effective_chat.send_message('Здесь будет ссылка на виртуальный диск')
+    # elif data == 'Материалы от спикеров':
+    #     update.effective_chat.send_message('Вы нажали кнопку "Материалы от спикеров"')
+    #     update.effective_chat.send_message('Здесь будет ссылка на виртуальный диск')
             
     return start(update, context)
 
