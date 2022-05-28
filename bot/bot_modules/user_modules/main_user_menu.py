@@ -31,7 +31,7 @@ def start(update, context):
 
 
 def auth_code(update, context):
-    code = re.compile(update.message.text.replace(' ', '( )?'), re.IGNORECASE)
+    code = re.compile(update.message.text.replace(' ', '\s?'))
     user = users_col.find_one({'code': code})
     if user:
         context.user_data['autorized'] = True
