@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  forum_bot_mongo:
+    image: mongo
+    container_name: forum_bot_mongo
+    volumes:
+      - /opt/disk/news_spider_mongo:/data/db
+    restart: unless-stopped
+    tty: True
+
+  forum_bot:
+    build:
+      context: .
+      dockerfile: bot/Dockerfile
+    image: forum_bot
+    container_name: forum_bot
+    env_file:
+      - .env
+    volumes:
+      - ${LOGS_PATH}:${LOGS_PATH}
+    restart: always
+    tty: True
+    working_dir: /bot
