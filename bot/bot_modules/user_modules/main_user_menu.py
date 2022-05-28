@@ -18,7 +18,7 @@ def start(update, context):
             [InlineKeyboardButton('Расписание дня', callback_data='Расписание дня')],
             [InlineKeyboardButton('Внеобразовательная программа', callback_data='Внеобразовательная программа')],
             [InlineKeyboardButton('Баланс Ай-валюты', url='https://docs.google.com/spreadsheets/d/16a9D8JQNe9_5RFdLqqczCSGtfMohZ8jbDZanEVLfUh8/edit?usp=sharing')],
-            [InlineKeyboardButton('Тех. поддержка', callback_data='Тех. поддержка')],
+            [InlineKeyboardButton('Задать вопрос', url='https://forms.gle/injsy71mAQo5AFrz8')],
             [InlineKeyboardButton('Выход', callback_data='Выход')],
         ])
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
@@ -151,16 +151,16 @@ def main_menu_callback(update, context):
         )
         return config.EVENTS_CAT
         
-    elif data == 'Тех. поддержка':
-        update.effective_chat.send_message('Вы нажали кнопку "Тех. поддержка"')
-        context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
-            'Сформулируйте и напишите ваш вопрос в чат тех поддержки *здесь нужно вставить ссылку на чат тех поддержки*',
-            reply_markup=InlineKeyboardMarkup([
-                [InlineKeyboardButton('Задать вопрос', url='https://forms.gle/injsy71mAQo5AFrz8')],
-                [InlineKeyboardButton('Назад', callback_data='Назад')]
-            ])
-        )
-        return 
+    # elif data == 'Тех. поддержка':
+    #     update.effective_chat.send_message('Вы нажали кнопку "Тех. поддержка"')
+    #     context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
+    #         'Сформулируйте и напишите ваш вопрос в чат тех поддержки *здесь нужно вставить ссылку на чат тех поддержки*',
+    #         reply_markup=InlineKeyboardMarkup([
+    #             [InlineKeyboardButton('Задать вопрос', url='https://forms.gle/injsy71mAQo5AFrz8')],
+    #             [InlineKeyboardButton('Назад', callback_data='Назад')]
+    #         ])
+    #     )
+    #     return 
 
 
 def materials_callback(update: Update, context):
