@@ -3,7 +3,7 @@ from datetime import date, datetime
 
 from loguru import logger
 from telegram.ext import ConversationHandler, MessageHandler, Filters, CallbackQueryHandler, CommandHandler
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 
 import config
 from src.utils import delete_keyboard, admin_menu, get_one_button_keyboard, get_one_line_keyboard
@@ -160,7 +160,7 @@ def main_menu_callback(update, context):
         return 
 
 
-def materials_callback(update, context):
+def materials_callback(update: Update, context):
     if 'msg_for_del_keys' in context.user_data:
         delete_keyboard(context, update.effective_chat.id)
     
@@ -172,7 +172,7 @@ def materials_callback(update, context):
     if data == 'Карта форума':
         update.effective_chat.send_message('Вы нажали кнопку "Карта форума"')
         with open('/bot/files/Карта Форума.jpeg', 'rb') as file:
-            update.effective_chat.send_document(file, filename=file.name)
+            update.effective_chat.send_photo(file, filename=file.name)
         
     elif data == 'Программа форума':
         update.effective_chat.send_message('Вы нажали кнопку "Программа форума"')
