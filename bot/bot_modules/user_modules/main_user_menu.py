@@ -19,6 +19,7 @@ def start(update, context):
             [InlineKeyboardButton('Внеобразовательная программа', callback_data='Внеобразовательная программа')],
             [InlineKeyboardButton('Баланс Ай-валюты', url='https://docs.google.com/spreadsheets/d/16a9D8JQNe9_5RFdLqqczCSGtfMohZ8jbDZanEVLfUh8/edit?usp=sharing')],
             [InlineKeyboardButton('Задать вопрос', url='https://forms.gle/injsy71mAQo5AFrz8')],
+            [InlineKeyboardButton('Я - спикер', url='https://docs.google.com/forms/d/e/1FAIpQLSeRskZNd1oahqwLbEps1T9DV2YuYnEFAGm-uNpLECooJOfJ-g/viewform')],
             [InlineKeyboardButton('Выход', callback_data='Выход')],
         ])
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
