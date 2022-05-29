@@ -18,7 +18,7 @@ for sheet_name in wb.sheetnames:
         time = ws[f'A{i}'].value
         name = ws[f'B{i}'].value
         if ws[f"C{i}"].value:
-            name += f'\n\nМесто проведения: {ws[f"C{i}"].value}'
+            name += f'\nМесто проведения: {ws[f"C{i}"].value}'
             
         events.append({"event_name": name, "event_time": time})
 
