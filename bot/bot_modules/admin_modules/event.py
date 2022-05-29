@@ -79,11 +79,12 @@ def ask_event_cat(update, context):
     
     context.user_data['new_event_dt'] = new_event_dt.isoformat()
     keyboard = InlineKeyboardMarkup([
-        [InlineKeyboardButton('Творческая программа', callback_data='Творческая программа')],
-        [InlineKeyboardButton('Деловая программа', callback_data='Деловая программа')],
-        [InlineKeyboardButton('Туристическая программа', callback_data='Туристическая программа')],
-        [InlineKeyboardButton('Экспертные беседки', callback_data='Экспертные беседки')],
+        # [InlineKeyboardButton('Творческая программа', callback_data='Творческая программа')],
+        # [InlineKeyboardButton('Деловая программа', callback_data='Деловая программа')],
+        # [InlineKeyboardButton('Туристическая программа', callback_data='Туристическая программа')],
         [InlineKeyboardButton('Турниры', callback_data='Турниры')],
+        [InlineKeyboardButton('Экспертные беседки', callback_data='Экспертные беседки')],
+        [InlineKeyboardButton('Мероприятия от партнеров', callback_data='Мероприятия от партнеров')],
         [InlineKeyboardButton('Назад', callback_data='Назад')],
     ])
     context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(
