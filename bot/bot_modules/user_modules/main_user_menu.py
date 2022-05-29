@@ -127,7 +127,7 @@ def main_menu_callback(update, context):
         
         for index, event in enumerate(day_events["events"]):
             text += f"{index + 1}: {event['event_name']}\n"
-            text += f"Время начала: {event['event_time']}\n\n"
+            text += f"Время проведения: {event['event_time']}\n\n"
             # keyboard.append(InlineKeyboardButton(index + 1, callback_data=index + 1))
             
         context.user_data['msg_for_del_keys'] = update.effective_chat.send_message(

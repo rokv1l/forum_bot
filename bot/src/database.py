@@ -13,7 +13,7 @@ events_col: Collection = db.events
 # events_col {'category': '', 'name': '', 'desc': '', 'dt': '', users: []}
 
 day_program_col: Collection = db.day_program
-# events_col {'date': '', 'platform': '', "events": [{"event_name": '', "event_time": ''}]}
+# day_program_col {'date': '', 'platform': '', "events": [{"event_name": '', "event_time": ''}]}
 
 quest_col: Collection = db.questions
 # quest_col {'category': '', 'question': '', 'answer': '', 'who_ask': {'tg_id': '', 'full_name': ''}, 'who_answer': {'tg_id': '', 'full_name': ''}}
