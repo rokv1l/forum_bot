@@ -28,7 +28,7 @@ def start(update, context):
         )
         return config.USER_MENU
 
-    update.effective_chat.send_message('Пожалуйста введи свой идентификатор что-бы я мог дать тебе доступ')
+    update.effective_chat.send_message('Пожалуйста, введи свой идентификатор, чтобы я мог дать тебе доступ')
     return config.AUTH_CODE
 
 
@@ -307,7 +307,7 @@ def event_confirm_callback(update, context):
 def unknown(update, context):
     update.effective_chat.send_message(
         'Вы ввели неизвестную команду.\n'\
-        'Если что-то пошло не так то воспользуйтесь /exit для сброса диалогов к началу'
+        'Если что-то пошло не так, то воспользуйтесь /exit для сброса диалогов к началу'
     )
 
 
