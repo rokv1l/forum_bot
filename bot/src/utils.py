@@ -84,11 +84,14 @@ def admin_menu(update, context):
 
 
 def restart_callback(update, context):
-    context.bot.edit_message_text(
-        text=update.callback_query.message.text,
-        chat_id=update.effective_chat.id,
-        message_id=update.callback_query.message.message_id
-    )
+    try:
+        context.bot.edit_message_text(
+            text=update.callback_query.message.text,
+            chat_id=update.effective_chat.id,
+            message_id=update.callback_query.message.message_id
+        )
+    except Exception: 
+        pass
     update.effective_chat.send_message(
         'Похоже что бот был перезагружен, все диалоги сброшены в начало.\n'\
         'Для использования бота нажмите /start'
