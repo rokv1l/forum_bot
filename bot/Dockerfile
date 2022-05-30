@@ -1,5 +1,5 @@
 FROM python:3
-ENV TZ=Europe/Moscow
+ENV TZ=Asia/Krasnoyarsk
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /bot
