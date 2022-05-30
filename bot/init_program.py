@@ -8,7 +8,7 @@ from src.database import day_program_col
 wb = load_workbook(f'files/программа30.xlsx')
 for sheet_name in wb.sheetnames:
     ws = wb[sheet_name]
-    date_ = date(year=2022, month=5, day=30).isoformat()
+    date_ = date(year=2022, month=5, day=31).isoformat()
     platform = sheet_name.lower()
     events = []
     for i in range(3, 9999):
