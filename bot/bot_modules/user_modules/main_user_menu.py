@@ -271,6 +271,11 @@ def events_event_callback(update, context):
         delete_keyboard(context, update.effective_chat.id)
         
     data = update.callback_query.data
+    
+    if data == 'Назад':
+        update.effective_chat.send_message('Вы нажали кнопку "Назад"')
+        return start(update, context)
+
     event = context.user_data['selected_events'][int(data) - 1]
     context.user_data['selected_event'] = event
     text = f'Вы выбрали: {event["name"]}\n\n'\
