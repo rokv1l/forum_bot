@@ -34,7 +34,7 @@ def events_data_callback(update, context):
         sheet.cell(row=i + 2, column=4).value = event['dt'].isoformat().replace('T', ' ')
         
         users = [users_col.find_one({'tg_id': user}) for user in event['users']]
-        sheet.cell(row=i + 2, column=5).value = ', '.join([f"{user['full_name']} ({user['platform']})" for user in users])
+        sheet.cell(row=i + 2, column=5).value = ', '.join([f"{user['full_name']} ({user['platform']})" for user in users if user])
         
     path = f'files/events_data_{update.effective_chat.id}_{datetime.now().isoformat().replace(":", "_")}.xlsx'
     wb.save(path)
