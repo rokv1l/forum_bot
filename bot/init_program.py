@@ -5,10 +5,10 @@ from openpyxl import load_workbook
 from src.database import day_program_col
 
 
-wb = load_workbook(f'files/программа 1 июня.xlsx')
+wb = load_workbook(f'files/программа 2июня.xlsx')
 for sheet_name in wb.sheetnames:
     ws = wb[sheet_name]
-    date_ = date(year=2022, month=6, day=1).isoformat()
+    date_ = date(year=2022, month=6, day=2).isoformat()
     platform = sheet_name.lower()
     events = []
     for i in range(3, 9999):
